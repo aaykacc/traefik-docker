@@ -41,3 +41,7 @@ This repository provides a Docker Compose setup for Traefik, a modern reverse pr
 
    ```bash
    docker-compose up -d
+
+## Contributing
+
+Feel free to open issues or submit pull requests for improvements.
