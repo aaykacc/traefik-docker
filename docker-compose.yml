@@ -32,9 +32,7 @@ services:
             - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
             - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
             # Basic Auth for Dashboard (replace with your own hash)
-            # Note: when used in docker-compose.yml all dollar signs in the hash need to be doubled for escaping.
-            # To create a user:password pair, the following command can be used:
-            # echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
+            # Note: When used in docker-compose.yml, all dollar signs ($) in the hash need to be doubled ($$) for escaping.
             - "traefik.http.routers.traefik-dashboard.middlewares=auth"
             - "traefik.http.middlewares.auth.basicauth.users=admin:$apr1$xxxxxxxx$yyyyyyyyyyyyyyyyyyyyyyyy"
         networks:
